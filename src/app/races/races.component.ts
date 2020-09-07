@@ -4,6 +4,7 @@ import { RACES} from "../mock-race";
 import {Router} from "@angular/router";
 import {PONIES} from "../mock-ponies";
 import {Pony} from "../pony";
+import {element} from "protractor";
 
 @Component({
   selector: 'app-races',
@@ -13,19 +14,26 @@ import {Pony} from "../pony";
 export class RacesComponent implements OnInit {
 
   newRace: Race;
-  ponies: Pony[];
+  poniesBool= Array<boolean>();
+  allPonies = PONIES;
   constructor(private router: Router) {
-    this.ponies = PONIES;
     this.newRace = new Race();
+    for (let i=0;i < PONIES.length; i++){
+      this.poniesBool.push(false);
+    }
   }
 
   ngOnInit(): void {
   }
 
   onSubmit():void {
+    for (let index = 0; index< this.poniesBool.length; index++){
+      if (this.poniesBool[index]){
+        this.newRace.ponies.push(this.allPonies[index])
+      }
+    }
     RACES.push(this.newRace);
-    console.log(this.newRace)
-    // this.router.navigate(['/races'])
+    this.router.navigate(['/races'])
   }
 
 }

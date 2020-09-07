@@ -6,9 +6,9 @@
   <label for="date">Date</label>
   <input type="date" name="date" id="date" [(ngModel)]="newRace.date">
 
-  <div *ngFor="let p of ponies; let i=index">
-    <input type="checkbox" id="{{p.id_poney}}">
-    <label for="{{p.id_poney}}">{{p.name}}</label>
+  <div *ngFor="let p of allPonies; let i= index">
+    {{p.name}}
+    <input type="checkbox" name="{{p.name}}" (change)="poniesBool[i] =!poniesBool[i]">
   </div>
 
   <button type="submit">Enregistrer</button>
