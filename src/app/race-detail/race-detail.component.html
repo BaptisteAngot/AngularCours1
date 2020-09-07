@@ -1,0 +1,6 @@
+{{race.location | nameRacePipe}} - {{race.date | date: "dd/MM/yyyy"}}
+<ul>
+  <li *ngFor="let rp of race.ponies">
+    <app-pony-detail [pony]="rp"></app-pony-detail>
+  </li>
+</ul>
