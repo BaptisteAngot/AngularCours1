@@ -30,4 +30,8 @@ export class PonyService {
   addPony(p: Pony): void{
     this.http.post<Pony>(this.url + 'pony-add.php', p, this.httpsOption).subscribe()
   }
+
+  updatePony(p: Pony): void{
+    this.http.put<Pony>(this.url+'pony-update.php',p,this.httpsOption)
+  }
 }

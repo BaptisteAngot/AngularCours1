@@ -16,13 +16,14 @@ import { PonyReactiveComponent } from './pony-reactive/pony-reactive.component';
 import { RaceReactiveComponent } from './race-reactive/race-reactive.component';
 import {PonyService} from "./pony.service";
 import {HttpClientModule} from "@angular/common/http";
+import {RaceServiceService} from "./race-service.service";
 
 const ROUTES: Routes = [
   { path: '', component: PoniesComponent},
   { path: 'races', component: RaceComponent},
   { path : 'add-pony', component: PonyComponent},
   { path : 'update-pony/:id', component: PonyComponent},
-  { path : 'add-race', component: RaceReactiveComponent},
+  { path : 'add-race', component: RacesComponent},
   { path : 'update-race/:id', component: RacesComponent},
 ];
 @NgModule({
@@ -46,7 +47,7 @@ const ROUTES: Routes = [
         ReactiveFormsModule,
         HttpClientModule
     ],
-  providers: [PonyService],
+  providers: [PonyService, RaceServiceService],
   bootstrap: [AppComponent]
 })
 

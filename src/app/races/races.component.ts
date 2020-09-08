@@ -5,6 +5,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {PONIES} from "../mock-ponies";
 import {Pony} from "../pony";
 import {element} from "protractor";
+import {RaceServiceService} from "../race-service.service";
+import {PonyService} from "../pony.service";
 
 @Component({
   selector: 'app-races',
@@ -15,16 +17,19 @@ export class RacesComponent implements OnInit {
 
   newRace: Race;
   poniesBool= Array<boolean>();
-  allPonies = PONIES;
+  allPonies = Array<Pony>();
 
   add: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private raceServiceService: RaceServiceService, private ponyService: PonyService) {
     this.newRace = new Race();
-    for (let i=0;i < PONIES.length; i++){
-      this.poniesBool.push(false);
-      this.add = true
-    }
+    this.ponyService.getAllPonies().subscribe(p => {
+     this.allPonies = p;
+      for (let i=0;i < this.allPonies.length; i++){
+        this.poniesBool.push(false);
+        this.add = true
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -35,7 +40,7 @@ export class RacesComponent implements OnInit {
       const id = parseInt(this.route.snapshot.paramMap.get('id'),0);
 
       for (let index=0; index < RACES.length; index++){
-        if (RACES[index].id_race == id){
+        if (RACES[index].id == id){
           this.newRace = RACES[index];
           break
         }
@@ -50,7 +55,7 @@ export class RacesComponent implements OnInit {
           this.newRace.ponies.push(this.allPonies[index])
         }
       }
-      RACES.push(this.newRace);
+      this.raceServiceService.addRace(this.newRace)
       this.router.navigate(['/races'])
     }else {
       //Update du mock
