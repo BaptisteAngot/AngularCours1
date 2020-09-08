@@ -52,8 +52,8 @@ export class RacesComponent implements OnInit {
       this.raceServiceService.addRace(this.newRace);
       this.router.navigate(['/races']);
     } else {
-      console.log(this.newRace);
       this.raceServiceService.updateRace(this.newRace);
+      this.router.navigate(['/races']);
     }
   }
 }
