@@ -17,6 +17,9 @@ import { RaceReactiveComponent } from './race-reactive/race-reactive.component';
 import {PonyService} from "./pony.service";
 import {HttpClientModule} from "@angular/common/http";
 import {RaceServiceService} from "./race-service.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 const ROUTES: Routes = [
   { path: '', component: PoniesComponent},
@@ -45,7 +48,9 @@ const ROUTES: Routes = [
         RouterModule.forRoot(ROUTES),
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatCheckboxModule
     ],
   providers: [PonyService, RaceServiceService],
   bootstrap: [AppComponent]

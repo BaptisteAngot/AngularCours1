@@ -8,8 +8,7 @@
   <input type="date" name="date" id="date" [(ngModel)]="newRace.date">
 
   <div *ngFor="let p of allPonies; let i= index">
-    {{p.name}}
-    <input type="checkbox" name="{{p.name}}" (change)="poniesBool[i] =!poniesBool[i]">
+    <mat-checkbox name="{{p.name}}" (change)="poniesBool[i] =! poniesBool[i]">{{p.name}}</mat-checkbox>
   </div>
 
   <button *ngIf="add" type="submit">Enregistrer</button>
