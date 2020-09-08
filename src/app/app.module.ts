@@ -10,13 +10,14 @@ import { NameRacePipePipe } from './name-race-pipe.pipe';
 import { MenuComponent } from './menu/menu.component';
 import {RouterModule, Routes} from "@angular/router";
 import { PonyComponent } from './pony/pony.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RacesComponent } from './races/races.component';
+import { PonyReactiveComponent } from './pony-reactive/pony-reactive.component';
 
 const ROUTES: Routes = [
   { path: '', component: PoniesComponent},
   { path: 'races', component: RaceComponent},
-  { path : 'add-pony', component: PonyComponent},
+  { path : 'add-pony', component: PonyReactiveComponent},
   { path : 'add-race', component: RacesComponent}
 ];
 @NgModule({
@@ -29,13 +30,15 @@ const ROUTES: Routes = [
     NameRacePipePipe,
     MenuComponent,
     PonyComponent,
-    RacesComponent
+    RacesComponent,
+    PonyReactiveComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(ROUTES),
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(ROUTES),
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
