@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pony } from "../pony";
 import {PONIES} from "../mock-ponies";
 import {ActivatedRoute, Router} from "@angular/router";
+import {PonyService} from "../pony.service";
 
 @Component({
   selector: 'app-pony',
@@ -13,7 +14,7 @@ export class PonyComponent implements OnInit {
 
   newPony: Pony;
   add: boolean;
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private ponyService: PonyService) {
     this.newPony = new Pony();
     this.add = true;
   }
@@ -36,7 +37,7 @@ export class PonyComponent implements OnInit {
 
   onSubmit():void {
     if (this.add){
-      PONIES.push(this.newPony);
+      this.ponyService.addPony(this.newPony);
       this.router.navigate(['/']);
     }else {
       // Update Mock du pony

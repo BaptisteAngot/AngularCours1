@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Pony } from '../pony';
-import {PONIES} from "../mock-ponies";
 import {PonyService} from "../pony.service";
 
 @Component({
@@ -17,6 +16,7 @@ export class PoniesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.ponyService.getAllPonies().subscribe(p => this.ponies = p);
   }
 
 }

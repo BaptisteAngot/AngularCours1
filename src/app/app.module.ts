@@ -20,7 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
 const ROUTES: Routes = [
   { path: '', component: PoniesComponent},
   { path: 'races', component: RaceComponent},
-  { path : 'add-pony', component: PonyReactiveComponent},
+  { path : 'add-pony', component: PonyComponent},
   { path : 'update-pony/:id', component: PonyComponent},
   { path : 'add-race', component: RaceReactiveComponent},
   { path : 'update-race/:id', component: RacesComponent},
