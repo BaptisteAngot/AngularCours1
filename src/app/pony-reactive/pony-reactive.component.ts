@@ -10,13 +10,15 @@ import {Router} from "@angular/router";
   styleUrls: ['./pony-reactive.component.css']
 })
 export class PonyReactiveComponent implements OnInit {
+
   ponyForm = this.fb.group({
     name: ['', Validators.required],
     color: ['', Validators.required],
     age: ['0', Validators.required],
-  })
+  });
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router) {
+  }
 
   ngOnInit(): void {
   }

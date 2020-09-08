@@ -1,0 +1,14 @@
+<h1>Entrer votre nouvelle course</h1>
+<form [formGroup]="raceForm" (ngSubmit)="onSubmit()">
+  <label for="location">Localisation</label>
+  <input type="text" name="location" id="location" formControlName="location" >
+
+  <label for="date">Date</label>
+  <input type="date" name="date" id="date" formControlName="date" >
+  <div *ngFor="let p of allPonies; let i= index">
+    {{p.name}}
+    <input type="checkbox" formControlName="ponies">
+  </div>
+
+  <button type="submit">Enregistrer</button>
+</form>

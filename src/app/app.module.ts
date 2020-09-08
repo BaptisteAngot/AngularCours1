@@ -13,12 +13,15 @@ import { PonyComponent } from './pony/pony.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RacesComponent } from './races/races.component';
 import { PonyReactiveComponent } from './pony-reactive/pony-reactive.component';
+import { RaceReactiveComponent } from './race-reactive/race-reactive.component';
 
 const ROUTES: Routes = [
   { path: '', component: PoniesComponent},
   { path: 'races', component: RaceComponent},
   { path : 'add-pony', component: PonyReactiveComponent},
-  { path : 'add-race', component: RacesComponent}
+  { path : 'update-pony/:id', component: PonyComponent},
+  { path : 'add-race', component: RaceReactiveComponent},
+  { path : 'update-race/:id', component: RaceComponent},
 ];
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ const ROUTES: Routes = [
     MenuComponent,
     PonyComponent,
     RacesComponent,
-    PonyReactiveComponent
+    PonyReactiveComponent,
+    RaceReactiveComponent
   ],
     imports: [
         BrowserModule,
