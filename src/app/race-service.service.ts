@@ -32,6 +32,6 @@ export class RaceServiceService {
   }
 
   updateRace(r: Race): void {
-    this.http.put<Race>(this.url+'race-update.php',r,this.httpsOption).subscribe();
+    this.http.put<Race>(this.url+'race-update.php/',r,this.httpsOption).subscribe();
   }
 }

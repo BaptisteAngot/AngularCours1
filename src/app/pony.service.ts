@@ -20,18 +20,18 @@ export class PonyService {
   }
 
   getAllPonies(): Observable<Array<Pony>> {
-    return this.http.get<Array<Pony>>(this.url+'pony-get.php', this.httpsOption)
+    return this.http.get<Array<Pony>>(this.url+'pony-get.php', this.httpsOption);
   }
 
   getPony(id: number): Observable<Pony> {
-    return this.http.get<Pony>(this.url+'pony-get-id.php/'+id, this.httpsOption)
+    return this.http.get<Pony>(this.url+'pony-get-id.php/'+id, this.httpsOption);
   }
 
   addPony(p: Pony): void{
-    this.http.post<Pony>(this.url + 'pony-add.php', p, this.httpsOption).subscribe()
+    this.http.post<Pony>(this.url + 'pony-add.php', p, this.httpsOption).subscribe();
   }
 
   updatePony(p: Pony): void{
-    this.http.put<Pony>(this.url+'pony-update.php',p,this.httpsOption)
+    this.http.put<Pony>(this.url+'pony-update.php',p,this.httpsOption).subscribe();
   }
 }

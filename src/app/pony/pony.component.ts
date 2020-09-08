@@ -14,6 +14,7 @@ export class PonyComponent implements OnInit {
 
   newPony: Pony;
   add: boolean;
+
   constructor(private router: Router, private route: ActivatedRoute, private ponyService: PonyService) {
     this.newPony = new Pony();
     this.add = true;
@@ -25,13 +26,8 @@ export class PonyComponent implements OnInit {
     else{
       this.add = false;
       const id = parseInt(this.route.snapshot.paramMap.get('id'),0);
-      // Moche avec les mocks, mieux plus tard.
-      for (let index=0; index < PONIES.length; index++){
-        if (PONIES[index].id_poney == id){
-          this.newPony = PONIES[index];
-          break;
-        }
-      }
+
+      this.ponyService.getPony(id).subscribe(r => this.newPony = r);
     }
   }
 
@@ -40,8 +36,7 @@ export class PonyComponent implements OnInit {
       this.ponyService.addPony(this.newPony);
       this.router.navigate(['/']);
     }else {
-      // Update Mock du pony
-      console.log(this.newPony)
+      this.ponyService.updatePony(this.newPony);
     }
   }
 }
