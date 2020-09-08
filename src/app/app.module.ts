@@ -21,7 +21,7 @@ const ROUTES: Routes = [
   { path : 'add-pony', component: PonyReactiveComponent},
   { path : 'update-pony/:id', component: PonyComponent},
   { path : 'add-race', component: RaceReactiveComponent},
-  { path : 'update-race/:id', component: RaceComponent},
+  { path : 'update-race/:id', component: RacesComponent},
 ];
 @NgModule({
   declarations: [

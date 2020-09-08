@@ -35,7 +35,11 @@ export class PonyComponent implements OnInit {
   }
 
   onSubmit():void {
-    PONIES.push(this.newPony);
-    this.router.navigate(['/']);
+    if (this.add){
+      PONIES.push(this.newPony);
+      this.router.navigate(['/']);
+    }else {
+      console.log()
+    }
   }
 }

@@ -44,13 +44,16 @@ export class RacesComponent implements OnInit {
   }
 
   onSubmit():void {
-    for (let index = 0; index< this.poniesBool.length; index++){
-      if (this.poniesBool[index]){
-        this.newRace.ponies.push(this.allPonies[index])
+    if (this.add){
+      for (let index = 0; index< this.poniesBool.length; index++){
+        if (this.poniesBool[index]){
+          this.newRace.ponies.push(this.allPonies[index])
+        }
       }
+      RACES.push(this.newRace);
+      this.router.navigate(['/races'])
+    }else {
+      console.log(this.newRace)
     }
-    RACES.push(this.newRace);
-    this.router.navigate(['/races'])
   }
-
 }
