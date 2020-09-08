@@ -1,6 +1,14 @@
 <nav>
-  <a routerLink="">Poneys</a>
-  <a routerLink="races">Courses</a>
-  <a routerLink="add-pony">Add Pony</a>
-  <a routerLink="add-race">Add Race</a>
+  <button mat-button [matMenuTriggerFor]="aboveMenu">Pony</button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+    <button mat-menu-item routerLink="">Poney</button>
+    <button mat-menu-item routerLink="add-pony">Add Ponies</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="belowMenu">Race</button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item routerLink="races">Race</button>
+    <button mat-menu-item routerLink="add-race">Add Race</button>
+  </mat-menu>
+
 </nav>

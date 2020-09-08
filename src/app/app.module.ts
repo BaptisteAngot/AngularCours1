@@ -19,6 +19,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {RaceServiceService} from "./race-service.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 const ROUTES: Routes = [
@@ -50,7 +52,8 @@ const ROUTES: Routes = [
         ReactiveFormsModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatMenuModule
     ],
   providers: [PonyService, RaceServiceService],
   bootstrap: [AppComponent]
