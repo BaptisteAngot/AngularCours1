@@ -14,6 +14,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RacesComponent } from './races/races.component';
 import { PonyReactiveComponent } from './pony-reactive/pony-reactive.component';
 import { RaceReactiveComponent } from './race-reactive/race-reactive.component';
+import {PonyService} from "./pony.service";
+import {HttpClientModule} from "@angular/common/http";
 
 const ROUTES: Routes = [
   { path: '', component: PoniesComponent},
@@ -41,9 +43,10 @@ const ROUTES: Routes = [
         BrowserModule,
         RouterModule.forRoot(ROUTES),
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
-  providers: [],
+  providers: [PonyService],
   bootstrap: [AppComponent]
 })
 
