@@ -39,7 +39,8 @@ export class PonyComponent implements OnInit {
       PONIES.push(this.newPony);
       this.router.navigate(['/']);
     }else {
-      console.log()
+      // Update Mock du pony
+      console.log(this.newPony)
     }
   }
 }

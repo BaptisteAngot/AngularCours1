@@ -53,6 +53,7 @@ export class RacesComponent implements OnInit {
       RACES.push(this.newRace);
       this.router.navigate(['/races'])
     }else {
+      //Update du mock
       console.log(this.newRace)
     }
   }
