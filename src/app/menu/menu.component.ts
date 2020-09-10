@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  userName: string;
+  connect = true;
+
+  constructor() {
+    this.userName = '';
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void{
+    if (this.connect){
+      sessionStorage.setItem('idUser', this.userName);
+      this.connect = false;
+    } else {
+      sessionStorage.removeItem('idUser');
+      this.userName = '';
+      this.connect = true;
+    }
   }
 
 }

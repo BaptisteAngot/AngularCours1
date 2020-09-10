@@ -1,14 +1,13 @@
 <nav>
-  <button mat-button [matMenuTriggerFor]="aboveMenu">Pony</button>
-  <mat-menu #aboveMenu="matMenu" yPosition="above">
-    <button mat-menu-item routerLink="">Poney</button>
-    <button mat-menu-item routerLink="add-pony">Add Ponies</button>
-  </mat-menu>
-
-  <button mat-button [matMenuTriggerFor]="belowMenu">Race</button>
-  <mat-menu #belowMenu="matMenu" yPosition="below">
-    <button mat-menu-item routerLink="races">Race</button>
-    <button mat-menu-item routerLink="add-race">Add Race</button>
-  </mat-menu>
+  <a routerLink="">Poney</a>
+  <a routerLink="add-poney">Add ponies</a>
+  <a routerLink="race">Race</a>
+  <a routerLink="add-race">Add race</a>
+  <form (ngSubmit)="onSubmit()">
+    <input type="text" name="userName" [(ngModel)]="userName" [hidden]="!connect">
+    <button *ngIf="connect" type="submit">Ok</button>
+    <button *ngIf="!connect" type="submit">OUT</button>
+  </form>
+  <p [hidden]="connect">{{userName}}</p>
 
 </nav>
