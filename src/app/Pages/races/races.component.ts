@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Race} from '../race';
-import {RACES} from "../mock-race";
+import {Race} from '../../Models/race';
+import {RACES} from "../../Mock/mock-race";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Pony} from "../pony";
-import {RaceServiceService} from "../race-service.service";
-import {PonyService} from "../pony.service";
+import {Pony} from "../../Models/pony";
+import {RaceServiceService} from "../../Services/race-service.service";
+import {PonyService} from "../../Services/pony.service";
 
 @Component({
   selector: 'app-races',

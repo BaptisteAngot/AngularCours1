@@ -1,4 +1,4 @@
-import {Race} from "./race";
+import {Race} from "../Models/race";
 
 export const RACES: Race[] = [
   {

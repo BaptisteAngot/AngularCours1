@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Pony } from './pony';
+import { Pony } from './Models/pony';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

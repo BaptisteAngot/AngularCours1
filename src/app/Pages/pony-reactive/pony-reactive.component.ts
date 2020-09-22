@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {Pony} from "../pony";
-import {PONIES} from "../mock-ponies";
+import {Pony} from "../../Models/pony";
+import {PONIES} from "../../Mock/mock-ponies";
 import {Router} from "@angular/router";
 
 @Component({

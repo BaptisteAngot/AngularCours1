@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {Pony} from "./pony";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Pony} from '../Models/pony';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PonyService {
-  url: String = 'http://localhost/LittlePoniesAPI/api/';
+  url = 'http://localhost:8888/LittlePoniesAPI/api/';
 
-  httpsOption= {
+  httpsOption = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
-  }
+  };
 
   constructor(private http: HttpClient) {
 
   }
 
   getAllPonies(): Observable<Array<Pony>> {
-    return this.http.get<Array<Pony>>(this.url+'pony-get.php', this.httpsOption);
+    return this.http.get<Array<Pony>>(this.url + 'pony-get.php', this.httpsOption);
   }
 
   getPony(id: number): Observable<Pony> {
-    return this.http.get<Pony>(this.url+'pony-get-id.php/'+id, this.httpsOption);
+    return this.http.get<Pony>(this.url + 'pony-get-id.php/' + id, this.httpsOption);
   }
 
   addPony(p: Pony): void{
@@ -32,6 +32,6 @@ export class PonyService {
   }
 
   updatePony(p: Pony): void{
-    this.http.put<Pony>(this.url+'pony-update.php',p,this.httpsOption).subscribe();
+    this.http.put<Pony>(this.url + 'pony-update.php', p, this.httpsOption).subscribe();
   }
 }

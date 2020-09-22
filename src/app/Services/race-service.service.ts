@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Race} from "./race";
+import {Race} from "../Models/race";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RaceServiceService {
 
-  url: String = 'http://localhost/LittlePoniesAPI/api/';
+  url: String = 'http://localhost:8888/LittlePoniesAPI/api/';
 
   httpsOption= {
     headers: new HttpHeaders({

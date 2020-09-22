@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {Race} from "../race";
-import {RACES} from "../mock-race";
-import {PONIES} from "../mock-ponies";
-import {Pony} from "../pony";
+import {Race} from "../../Models/race";
+import {RACES} from "../../Mock/mock-race";
+import {PONIES} from "../../Mock/mock-ponies";
+import {Pony} from "../../Models/pony";
 
 @Component({
   selector: 'app-race-reactive',

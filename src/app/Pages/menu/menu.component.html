@@ -1,0 +1,13 @@
+<nav>
+  <a routerLink="">Poney</a>
+  <a routerLink="add-pony" *ngIf="!connect">Add ponies</a>
+  <a routerLink="races">Race</a>
+  <a routerLink="add-race" *ngIf="!connect">Add race</a>
+  <form (ngSubmit)="onSubmit()">
+    <input type="text" name="userName" [(ngModel)]="userName" [hidden]="!connect">
+    <button *ngIf="connect" type="submit">Ok</button>
+    <button *ngIf="!connect" type="submit">OUT</button>
+  </form>
+  <p [hidden]="connect">{{userName}}</p>
+
+</nav>

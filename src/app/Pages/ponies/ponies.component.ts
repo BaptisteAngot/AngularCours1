@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pony } from '../pony';
-import {PonyService} from "../pony.service";
+import { Pony } from '../../Models/pony';
+import {PonyService} from "../../Services/pony.service";
 
 @Component({
   selector: 'app-ponies',

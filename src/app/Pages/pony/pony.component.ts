@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Pony } from "../pony";
-import {PONIES} from "../mock-ponies";
+import { Pony } from "../../Models/pony";
+import {PONIES} from "../../Mock/mock-ponies";
 import {ActivatedRoute, Router} from "@angular/router";
-import {PonyService} from "../pony.service";
+import {PonyService} from "../../Services/pony.service";
 
 @Component({
   selector: 'app-pony',
