@@ -20,16 +20,20 @@ import {RaceServiceService} from "./race-service.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
+import {UserOKGuard} from "./user-ok.guard";
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 
 
 const ROUTES: Routes = [
   { path: '', component: PoniesComponent},
   { path: 'races', component: RaceComponent},
-  { path : 'add-pony', component: PonyComponent},
-  { path : 'update-pony/:id', component: PonyComponent},
-  { path : 'add-race', component: RacesComponent},
-  { path : 'update-race/:id', component: RacesComponent},
+  { path : 'add-pony', component: PonyComponent, canActivate: [UserOKGuard]},
+  { path : 'update-pony/:id', component: PonyComponent,canActivate: [UserOKGuard]},
+  { path : 'add-race', component: RacesComponent,canActivate: [UserOKGuard]},
+  { path : 'update-race/:id', component: RacesComponent,canActivate: [UserOKGuard]},
 ];
 @NgModule({
   declarations: [
@@ -53,7 +57,9 @@ const ROUTES: Routes = [
         HttpClientModule,
         BrowserAnimationsModule,
         MatCheckboxModule,
-        MatMenuModule
+        MatMenuModule,
+        MatButtonModule,
+        MatFormFieldModule
     ],
   providers: [PonyService, RaceServiceService],
   bootstrap: [AppComponent]
