@@ -12,6 +12,7 @@ import {PonyReactiveComponent} from "../pony-reactive/pony-reactive.component";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BrowserModule} from "@angular/platform-browser";
+import {Pony} from "../../Models/pony";
 
 describe('PonyComponent', () => {
   let component: PonyComponent;
@@ -55,4 +56,5 @@ describe('PonyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
