@@ -24,6 +24,8 @@ import {UserOKGuard} from './Guard/user-ok.guard';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 const ROUTES: Routes = [
@@ -60,7 +62,9 @@ const ROUTES: Routes = [
     MatCheckboxModule,
     MatMenuModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule,
+    MatDividerModule,
   ],
   providers: [PonyService, RaceServiceService],
   bootstrap: [AppComponent]

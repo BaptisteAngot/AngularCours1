@@ -1,6 +1,12 @@
-<ul>
-  <li *ngFor="let p of ponies; let i = index">
-    {{i}}
-    <app-pony-detail [pony]="p"></app-pony-detail>
-  </li>
-</ul>
+<!--<ul>-->
+<!--  <li *ngFor="let p of ponies; let i = index">-->
+<!--    {{i}}-->
+<!--    <app-pony-detail [pony]="p"></app-pony-detail>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<div class="col-lg-12">
+  <div class="col-lg-offset-2 col-lg-8">
+    <app-pony-detail *ngFor="let p of ponies" [pony]="p" ></app-pony-detail>
+  </div>
+</div>

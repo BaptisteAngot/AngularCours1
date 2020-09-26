@@ -8,7 +8,7 @@ import {Race} from "../Models/race";
 })
 export class RaceServiceService {
 
-  url: String = 'http://localhost:8888/LittlePoniesAPI/api/';
+  url: String = 'http://localhost/LittlePoniesAPI/api/';
 
   httpsOption= {
     headers: new HttpHeaders({

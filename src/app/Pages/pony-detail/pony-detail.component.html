@@ -1,3 +1,8 @@
-<div>
-  {{pony.name}}  {{pony.color}} - {{pony.age}} - <a routerLink="update-pony/{{pony.id}}">Modifier</a>
-</div>
+<mat-card class="example-card bg-info">
+  <mat-card-content>
+    {{pony.name}} - {{pony.color}} - {{pony.age}}
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button routerLink="update-pony/{{pony.id}}">Modifier le poney</button>
+  </mat-card-actions>
+</mat-card>

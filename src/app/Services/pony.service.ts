@@ -7,7 +7,7 @@ import {Pony} from '../Models/pony';
   providedIn: 'root'
 })
 export class PonyService {
-  url = 'http://localhost:8888/LittlePoniesAPI/api/';
+  url = 'http://localhost/LittlePoniesAPI/api/';
 
   httpsOption = {
     headers: new HttpHeaders({
